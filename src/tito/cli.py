@@ -242,7 +242,7 @@ class BaseCliModule(object):
         default_output_dir = lookup_build_dir(self.user_config)
         if not os.path.exists(default_output_dir):
             print("Creating output directory: %s" % default_output_dir)
-            run_command("mkdir %s" % default_output_dir)
+            run_command("mkdir -p %s" % default_output_dir)
 
         self.parser.add_option("-o", "--output", dest="output_dir",
                 metavar="OUTPUTDIR", default=default_output_dir,
